@@ -6,6 +6,8 @@ Program to display a score menu
 
 EXCELLENT_THRESHOLD = 90
 PASSABLE_THRESHOLD = 50
+MINIMUM_SCORE = 0
+MAXIMUM_SCORE = 100
 MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 
@@ -36,7 +38,7 @@ def main():
 def validate_score():
     """Validate the input score."""
     score = int(input("Enter score: "))
-    while score < 0 or score > 100:
+    while score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
         print("Invalid score")
         score = int(input("Enter score: "))
     return score
