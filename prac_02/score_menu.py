@@ -8,28 +8,31 @@ MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 
 def main():
-
+    score = ""
     print(MENU)
-    choice = input("> ").upper()
+    choice = input(">> ").upper()
     while choice != "Q":
         if choice == "G":
             score = validate_score()
         elif choice == "P":
             category = determine_category(score)
-            print(f"Your score is {category}")
+            print(f"Your score {score} is {category}")
         elif choice == "S":
-            pass
+            print("*" * score)
         else:
             print("Invalid choice")
 
-    choice = input("> ").upper()
+        print(MENU)
+        choice = input(">> ").upper()
+
+    print("Farewell")
 
 
 def validate_score():
     score = int(input("Enter score: "))
     while score < 0 or score > 100:
         print("Invalid score")
-        score = input("Enter score: ")
+        score = int(input("Enter score: "))
     return score
 
 
