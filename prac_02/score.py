@@ -8,6 +8,7 @@ import random
 
 
 def main():
+    """Print the category of the score and random score."""
     score = float(input("Enter score: "))
 
     category = determine_category(score)
@@ -19,6 +20,7 @@ def main():
 
 
 def determine_category(score):
+    """Determine the category of the score."""
     if score < 0 or score > 100:
         category = "Invalid score"
     elif score >= 90:
