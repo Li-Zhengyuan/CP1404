@@ -8,6 +8,7 @@ MINIMUM_LENGTH = 6
 
 
 def main():
+    """Check input password and print stars."""
     password = get_password()
 
     print_asterisks(password)
