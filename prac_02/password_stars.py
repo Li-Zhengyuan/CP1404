@@ -1,11 +1,22 @@
+MINIMUM_LENGTH = 6
+
+
 def main():
+    password = get_password()
+
+    print_asterisks(password)
+
+
+def get_password():
     password = input("Enter password: ")
-
-    repeat_password = input("Repeat password: ")
-    while len(repeat_password) < len(password):
+    while len(password) < MINIMUM_LENGTH:
         print("Length of password does not match.")
-        repeat_password = input("Repeat password: ")
+        password = input("Enter password: ")
+    return password
 
+
+def print_asterisks(password):
     print("*" * len(password))
+
 
 main()
