@@ -10,6 +10,7 @@ MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 
 def main():
+    """Execute the menu choice until user chooses to quit."""
     score = validate_score()
 
     print(MENU)
@@ -33,6 +34,7 @@ def main():
 
 
 def validate_score():
+    """Validate the input score."""
     score = int(input("Enter score: "))
     while score < 0 or score > 100:
         print("Invalid score")
