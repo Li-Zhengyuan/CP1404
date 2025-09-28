@@ -4,13 +4,17 @@ Program to display a score menu
 """
 
 
+EXCELLENT_THRESHOLD = 90
+PASSABLE_THRESHOLD = 50
 MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 
 def main():
-    score = ""
+    score = validate_score()
+
     print(MENU)
     choice = input(">> ").upper()
+
     while choice != "Q":
         if choice == "G":
             score = validate_score()
@@ -38,9 +42,9 @@ def validate_score():
 
 def determine_category(score):
     """Determine the category of the score."""
-    if score >= 90:
+    if score >= EXCELLENT_THRESHOLD:
         category = "Excellent"
-    elif score >= 50:
+    elif score >= PASSABLE_THRESHOLD:
         category = "Passable"
     else:
         category = "Bad"
