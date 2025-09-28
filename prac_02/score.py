@@ -3,6 +3,9 @@ CP1404/CP5632 - Practical
 Program to determine score status
 """
 
+EXCELLENT_THRESHOLD = 90
+PASSABLE_THRESHOLD = 50
+
 
 import random
 
@@ -23,9 +26,9 @@ def determine_category(score):
     """Determine the category of the score."""
     if score < 0 or score > 100:
         category = "Invalid score"
-    elif score >= 90:
+    elif score >= EXCELLENT_THRESHOLD:
         category = "Excellent"
-    elif score >= 50:
+    elif score >= PASSABLE_THRESHOLD:
         category = "Passable"
     else:
         category = "Bad"
