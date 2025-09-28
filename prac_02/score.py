@@ -5,7 +5,8 @@ Program to determine score status
 
 EXCELLENT_THRESHOLD = 90
 PASSABLE_THRESHOLD = 50
-
+MINIMUM_SCORE = 0
+MAXIMUM_SCORE = 100
 
 import random
 
@@ -18,13 +19,13 @@ def main():
 
     print(f"Score status: {category}")
 
-    random_score = random.randint(0, 100)
+    random_score = random.randint(MINIMUM_SCORE, MAXIMUM_SCORE)
     print(f"Random score {random_score} is {determine_category(random_score)}")
 
 
 def determine_category(score):
     """Determine the category of the score."""
-    if score < 0 or score > 100:
+    if score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
         category = "Invalid score"
     elif score >= EXCELLENT_THRESHOLD:
         category = "Excellent"
