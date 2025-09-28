@@ -13,7 +13,7 @@ def main():
     choice = input("> ").upper()
     while choice != "Q":
         if choice == "G":
-            pass
+            score = validate_score()
         elif choice == "P":
             pass
         elif choice == "S":
@@ -22,6 +22,14 @@ def main():
             print("Invalid choice")
 
     choice = input("> ").upper()
+
+
+def validate_score():
+    score = int(input("Enter score: "))
+    while score < 0 or score > 100:
+        print("Invalid score")
+        score = input("Enter score: ")
+    return score
 
 
 main()
