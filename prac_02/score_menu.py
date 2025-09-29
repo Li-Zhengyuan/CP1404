@@ -13,18 +13,20 @@ MENU = "(G)et a valid score\n(P)rint result\n(S)how stars\n(Q)uit"
 
 def main():
     """Execute the menu choice until user chooses to quit."""
-    score = validate_score()
+    score = -1
 
     print(MENU)
     choice = input(">> ").upper()
 
     while choice != "Q":
         if choice == "G":
-            score = validate_score()
+            score = get_score()
         elif choice == "P":
+            score = validate_score(score)
             category = determine_category(score)
             print(f"Your score {score} is {category}")
         elif choice == "S":
+            score = validate_score(score)
             print("*" * score)
         else:
             print("Invalid choice")
@@ -35,12 +37,19 @@ def main():
     print("Farewell")
 
 
-def validate_score():
-    """Validate the input score."""
+def get_score():
+    """Get the input score."""
     score = int(input("Enter score: "))
     while score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
         print("Invalid score")
         score = int(input("Enter score: "))
+    return score
+
+
+def validate_score(score):
+    """Validate the input score."""
+    if score == -1:
+        score = get_score()
     return score
 
 
