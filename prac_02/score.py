@@ -14,7 +14,6 @@ import random
 def main():
     """Print the category of the score and random score."""
     score = get_score()
-
     category = determine_category(score)
 
     print(f"Score {score} category: {category}")
