@@ -26,7 +26,7 @@ def main():
 def get_score():
     """Get user input score."""
     score = float(input("Enter score: "))
-    if score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
+    while score < MINIMUM_SCORE or score > MAXIMUM_SCORE:
         print("Invalid score")
         score = float(input("Enter score: "))
     return score
