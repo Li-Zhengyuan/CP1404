@@ -19,7 +19,7 @@ def main():
 
     print(f"Score {score} category: {category}")
 
-    random_score = random.randint(MINIMUM_SCORE, MAXIMUM_SCORE)
+    random_score = random.uniform(MINIMUM_SCORE, MAXIMUM_SCORE)
     print(f"Random score {random_score} is {determine_category(random_score)}")
 
 
