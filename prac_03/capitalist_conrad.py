@@ -17,13 +17,16 @@ INITIAL_PRICE = 10.0
 
 FILENAME = "conrad.txt"
 
+number_of_days = 0
 price = INITIAL_PRICE
-print(f"${price:,.2f}")
+print(f"Starting price: ${price:.2f}")
 
 while MIN_PRICE <= price <= MAX_PRICE:
+    number_of_days += 1
     price_change = 0
     # generate a random integer of 1 or 2
     # if it's 1, the price increases, otherwise it decreases
+    random_number = random.randint(1, 2)
     if random.randint(1, 2) == 1:
         # generate a random floating-point number
         # between 0 and MAX_INCREASE
@@ -34,4 +37,4 @@ while MIN_PRICE <= price <= MAX_PRICE:
         price_change = random.uniform(-MAX_DECREASE, 0)
 
     price *= (1 + price_change)
-    print(f"${price:,.2f}")
+    print(f"On day {number_of_days} price is: ${price:.2f}")
