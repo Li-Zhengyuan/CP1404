@@ -25,3 +25,16 @@ print("Finished.")
 #
 # 3.Could you change the code to avoid the possibility of a ZeroDivisionError?
 # If you could figure out the answer to question 3, then make this change now.
+try:
+    numerator = int(input("Enter the numerator: "))
+
+    denominator = int(input("Enter the denominator: "))
+    while denominator == 0:
+        print("The denominator cannot be zero!")
+        denominator = int(input("Enter the denominator: "))
+
+    fraction = numerator / denominator
+    print(fraction)
+except ValueError:
+    print("Numerator and denominator must be valid numbers!")
+print("Finished.")
