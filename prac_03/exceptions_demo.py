@@ -17,7 +17,11 @@ except ZeroDivisionError:
     print("Cannot divide by zero!")
 print("Finished.")
 
-# When will a ValueError occur?
-# When will a ZeroDivisionError occur?
-# Could you change the code to avoid the possibility of a ZeroDivisionError?
+# 1.When will a ValueError occur?
+# When typing something that is not an integer.
+#
+# 2.When will a ZeroDivisionError occur?
+# When typing a 0 for denominator.numerator
+#
+# 3.Could you change the code to avoid the possibility of a ZeroDivisionError?
 # If you could figure out the answer to question 3, then make this change now.
