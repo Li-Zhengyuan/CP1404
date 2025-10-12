@@ -15,6 +15,7 @@ def main():
 
     print_report(incomes)
 
+
 def print_report(incomes):
     """Print report based on input incomes."""
     print("\nIncome Report\n-------------")
