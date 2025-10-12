@@ -7,7 +7,7 @@ FILENAME = "subject_data.txt"
 
 
 def main():
-    """"""
+    """Read data from file and display subject details."""
     subject_data = load_subject_data(FILENAME)
     print(subject_data)
     display_subject_details(subject_data)
@@ -27,10 +27,11 @@ def load_subject_data(filename=FILENAME):
 
 
 def display_subject_details(subject_records):
-    """"""
+    """Display subject details with given subject records."""
     name_width = max(len(record[1]) for record in subject_records)
     count_width = max(len(str(record[2])) for record in subject_records)
     for subject_code, lecturer_name, student_count in subject_records:
         print(f"{subject_code} is taught by {lecturer_name:<{name_width}} and has {student_count:>{count_width}} students")
+
 
 main()
