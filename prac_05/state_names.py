@@ -15,6 +15,7 @@ CODE_TO_NAME = {
     "TAS": "Tasmania",
     "SA": "South Australia"
 }
+
 print(CODE_TO_NAME)
 
 state_code = input("Enter short state: ").upper()
