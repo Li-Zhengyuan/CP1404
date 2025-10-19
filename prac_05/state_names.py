@@ -16,6 +16,7 @@ CODE_TO_NAME = {
 }
 print(CODE_TO_NAME)
 
+
 state_code = input("Enter short state: ").upper()
 while state_code != "":
     try:
@@ -25,6 +26,7 @@ while state_code != "":
     state_code = input("Enter short state: ").upper()
 
 max_length = max(len(state_code) for state_code in CODE_TO_NAME.keys())
+
 
 for code, name in CODE_TO_NAME.items():
     print(f"{code:{max_length}} is {name}")
