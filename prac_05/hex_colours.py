@@ -10,3 +10,11 @@ NAME_TO_CODE = {
     "AntiqueWhite2": "#ffefdb",
     "Deep Peach": "#ffcba4"
 }
+
+name = input("Enter a name: ").upper()
+while name != "":
+    try:
+        print(NAME_TO_CODE[name])
+    except KeyError:
+        print("Not a valid key.")
+    name = input("Enter a name: ").upper()
