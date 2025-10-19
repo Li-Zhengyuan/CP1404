@@ -1,11 +1,12 @@
 """
 Emails
 Estimate: 30 minutes
-Actual:    minutes
+Actual:   20 minutes
 """
 
 
 def main():
+    """Enable user to enter the email to get the name."""
     email_to_name = {}
 
     email = input("Email: ").strip()
@@ -20,7 +21,10 @@ def main():
     for email, name in email_to_name.items():
         print(f"{name} ({email})")
 
+
+
 def extract_name(email):
+    """Extract name from email."""
     name_part = email.split("@")[0]
     parts = name_part.split(".")
     name = " ".join(parts).title()
