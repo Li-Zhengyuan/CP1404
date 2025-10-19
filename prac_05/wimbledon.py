@@ -7,7 +7,7 @@ Actual:   40 minutes
 FILENAME = "wimbledon.csv"
 
 def main():
-    
+    """"Read Wimbledon data and display champions and countries."""
     records = load_data(FILENAME)
     champion_to_wins, countries = process_data(records)
     display_result(champion_to_wins, countries)
