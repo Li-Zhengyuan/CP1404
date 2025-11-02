@@ -2,7 +2,7 @@
 Languages
 Estimate: 30 minutes
 Current Time: 18:16
-Actual:      minutes
+Actual:   34 minutes
 """
 
 from prac_06.programming_language import ProgrammingLanguage

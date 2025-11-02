@@ -2,7 +2,7 @@
 Programming_language
 Estimate: 30 minutes
 Current Time: 18:16
-Actual:      minutes
+Actual:   34 minutes
 """
 
 class ProgrammingLanguage:
