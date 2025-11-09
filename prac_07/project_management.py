@@ -1,7 +1,7 @@
 """
 Time estimation
 Plan time:    60 min
-Actual time:     min
+Actual time: 120 min
 """
 
 from project import Project
@@ -45,9 +45,13 @@ def main():
         else:
             print("Invalid option")
 
-        print()
         print(MENU)
         choice = input(">>> ").upper()
+
+    save_choice = input(f"Would you like to save to {FILENAME}? ").lower()
+    if save_choice in ("y", "yes"):
+        save_file(FILENAME, projects)
+    print("Thank you for using custom-built project management software.")
 
 
 def load_file(filename):

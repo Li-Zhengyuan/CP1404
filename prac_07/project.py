@@ -1,7 +1,7 @@
 """
 Time estimation
 Plan time:    60 min
-Actual time:     min
+Actual time: 120 min
 """
 
 import datetime
