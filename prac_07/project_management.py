@@ -6,6 +6,8 @@ Actual time:     min
 
 from project import Project
 
+from operator import attrgetter
+
 import datetime
 
 FILENAME = "projects.txt"
@@ -35,7 +37,7 @@ def main():
         elif choice == "D":
             display_project(projects)
         elif choice == "F":
-
+            filter_projects_by_date(projects)
         elif choice == "A":
 
         elif choice == "U":
@@ -75,8 +77,8 @@ def save_file(filename, projects):
 
 def display_project(projects):
     """Display incomplete and completed projects, both sorted by priority."""
-    incomplete = sorted([project for project in projects if not project.is_complete()])
-    complete = sorted([project for project in projects if project.is_complete()])
+    incomplete = sorted([project for project in projects if not project.is_complete()], key=attrgetter("priority"))
+    complete = sorted([project for project in projects if project.is_complete()], key=attrgetter("priority"))
 
     print("Incomplete projects:")
     for project in incomplete:
@@ -85,5 +87,14 @@ def display_project(projects):
     print("Completed projects:")
     for project in complete:
         print(f"  {project}")
+
+
+def filter_projects_by_date(projects):
+    """Input a date and show projects starting after that date."""
+    date_string = input("Show projects that start after date (dd/mm/yy): ")
+    filter_date = datetime.datetime.strptime(date_string, "%d/%m/%Y").date()
+    filtered = [project for project in projects if project.start_date > filter_date]
+    for project in sorted(filtered, key=attrgetter("start_date")):
+        print(project)
 
 main()
