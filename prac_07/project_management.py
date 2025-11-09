@@ -24,6 +24,26 @@ def main():
     projects = load_file(FILENAME)
     print(f"Loaded {len(projects)} projects from {FILENAME}")
     print(MENU)
+    choice = input(">>> ").upper()
+    while choice != "Q":
+        if choice == "L":
+
+        elif choice == "S":
+
+        elif choice == "D":
+
+        elif choice == "F":
+
+        elif choice == "A":
+
+        elif choice == "U":
+
+        else:
+            print("Invalid option")
+
+        print()
+        print(MENU)
+        choice = input(">>> ").upper()
 
 
 def load_file(filename):
@@ -41,5 +61,7 @@ def load_file(filename):
             projects.append(Project(name, start_date, priority, cost_estimate, completion_percentage))
     return projects
 
+
+def s():
 
 main()
