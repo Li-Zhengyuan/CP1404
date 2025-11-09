@@ -41,7 +41,7 @@ def main():
         elif choice == "A":
             add_new_project(projects)
         elif choice == "U":
-
+            update_project(projects)
         else:
             print("Invalid option")
 
@@ -108,6 +108,21 @@ def add_new_project(projects):
     completion_percentage = int(input("Percent complete: "))
     new_project = Project(name, start_date, priority, cost_estimate, completion_percentage)
     projects.append(new_project)
+
+
+def update_project(projects):
+    """Update an existing project's priority or completion percentage."""
+    for i, project in enumerate(projects, 1):
+        print(f"{i} {project}")
+    choice = int(input("Project choice: ")) - 1
+    project_to_update = projects[choice]
+    print(project_to_update)
+    new_percentage = input("New Percentage: ")
+    new_priority = input("New Priority: ")
+    if new_percentage != "":
+        project_to_update.completion_percentage = int(new_percentage)
+    if new_priority != "":
+        project_to_update.priority = int(new_priority)
 
 
 main()
