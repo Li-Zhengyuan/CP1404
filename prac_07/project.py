@@ -27,3 +27,11 @@ class Project:
     def __lt__(self, other):
         """Compare Projects by priority for sorting."""
         return self.priority < other.priority
+
+    def is_complete(self):
+        """Return True if the project is 100% complete."""
+        return self.completion_percentage == 100
+
+    def is_incomplete(self):
+        """Return True if the project is not yet complete."""
+        return self.completion_percentage < 100
