@@ -27,9 +27,11 @@ def main():
     choice = input(">>> ").upper()
     while choice != "Q":
         if choice == "L":
-
+            filename = input("Enter filename to load projects from: ").strip()
+            projects = load_file(filename)
         elif choice == "S":
-
+            filename = input("Enter filename to save to: ").strip()
+            save_file(filename, projects)
         elif choice == "D":
 
         elif choice == "F":
@@ -62,6 +64,12 @@ def load_file(filename):
     return projects
 
 
-def s():
+def save_file(filename, projects):
+    """Save the list of project objects to the assigned file."""
+    with open(filename, "w") as out_file:
+        print("Name\tStart Date\tPriority\tCost Estimate\tCompletion Percentage", file=out_file)
+        for project in projects:
+            print(f"{project.name}\t{project.start_date.strftime('%d/%m/%Y')}\t{project.priority}\t"
+                  f"{project.cost_estimate}\t{project.completion_percentage}", file=out_file)
 
 main()
