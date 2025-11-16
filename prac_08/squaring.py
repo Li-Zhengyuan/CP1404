@@ -10,13 +10,15 @@ from kivy.lang import Builder
 from kivy.core.window import Window
 
 __author__ = 'Lindsay Ward'
-
+LENGTH = 200
+WIDTH = 100
+SQUARE_NUMBER = 2
 
 class SquareNumberApp(App):
     """ SquareNumberApp is a Kivy App for squaring a number """
     def build(self):
         """ build the Kivy app from the kv file """
-        Window.size = (200, 100)
+        Window.size = (LENGTH, WIDTH)
         self.title = "Square Number"
         self.root = Builder.load_file('squaring.kv')
         return self.root
@@ -24,7 +26,7 @@ class SquareNumberApp(App):
     def handle_calculate(self, value):
         """ handle calculation (could be button press or other call), output result to label widget """
         try:
-            result = float(value) ** 2
+            result = float(value) ** SQUARE_NUMBER
             self.root.ids.output_label.text = str(result)
         except ValueError:
             pass
