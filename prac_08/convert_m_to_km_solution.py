@@ -14,7 +14,7 @@ __author__ = 'Lindsay Ward'
 MILES_TO_KM = 1.60934
 LENGTH = 600
 WIDTH = 300
-
+ZERO_NUMBER = 0
 
 class MilesConverterApp(App):
     """ MilesConverterApp is a Kivy App for converting miles to kilometres """
@@ -51,7 +51,7 @@ class MilesConverterApp(App):
             value = float(self.root.ids.input_miles.text)
             return value
         except ValueError:
-            return 0
+            return ZERO_NUMBER
 
 
 MilesConverterApp().run()
