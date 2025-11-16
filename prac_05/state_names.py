@@ -5,7 +5,7 @@ File needs reformatting
 """
 
 # TODO: Reformat this file so the dictionary code follows PEP 8 convention
-CODE_TO_NAME = {
+STATE_CODE_TO_NAME = {
     "QLD": "Queensland",
     "NSW": "New South Wales",
     "NT": "Northern Territory",
@@ -16,17 +16,17 @@ CODE_TO_NAME = {
     "SA": "South Australia"
 }
 
-print(CODE_TO_NAME)
+print(STATE_CODE_TO_NAME)
 
 state_code = input("Enter short state: ").upper()
 while state_code != "":
     try:
-        print(f"{state_code} is {CODE_TO_NAME[state_code]}")
+        print(f"{state_code} is {STATE_CODE_TO_NAME[state_code]}")
     except KeyError:
         print("Invalid short state")
     state_code = input("Enter short state: ").upper()
 
-max_length = max(len(state_code) for state_code in CODE_TO_NAME.keys())
+max_length = max(len(state_code) for state_code in STATE_CODE_TO_NAME.keys())
 
-for code, name in CODE_TO_NAME.items():
+for code, name in STATE_CODE_TO_NAME.items():
     print(f"{code:{max_length}} is {name}")
