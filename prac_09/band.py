@@ -13,3 +13,14 @@ class Band:
     def add(self, musician):
         """Add a musician to the band."""
         self.musicians.append(musician)
+
+    def play(self):
+        """Play the band's music (each musician plays their first instrument)."""
+        lines = []
+        for musician in self.musicians:
+            if musician.instruments:
+                instrument = musician.instruments[0]
+                lines.append(f"{musician.name} is playing: {instrument}")
+            else:
+                lines.append(f"{musician.name} needs an instrument!")
+        return "\n".join(lines)
