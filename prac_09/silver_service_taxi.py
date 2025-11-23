@@ -1,8 +1,10 @@
 from prac_09.taxi import Taxi
 
+FLAGFALL = 4.5
+
 class SilverServiceTaxi(Taxi):
     """Represent a SilverServiceTaxi."""
-    flagfall = 4.5
+    flagfall = FLAGFALL
 
     def __init__(self, name, fuel, fanciness):
         """Initialise a SilverServiceTaxi."""
