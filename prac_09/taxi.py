@@ -4,11 +4,12 @@ Car class
 """
 from prac_09.car import Car
 
+PRICE_PER_KM = 1.23
 
 class Taxi(Car):
     """Specialised version of a Car that includes fare costs."""
 
-    price_per_km = 1.23
+    price_per_km = PRICE_PER_KM
 
     def __init__(self, name, fuel):
         """Initialise a Taxi instance, based on parent class Car."""
