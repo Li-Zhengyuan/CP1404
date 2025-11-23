@@ -14,6 +14,5 @@ class UnreliableCar(Car):
         random_number = randint(1, 100)
         if random_number >= self.reliability:
             distance = 0
-        # Either way, we want to call the parent class's drive method (maybe driving 0)
         distance_driven = super().drive(distance)
         return distance_driven
