@@ -1,8 +1,5 @@
-from prac_09.car import Car
 from prac_09.taxi import Taxi
 from prac_09.silver_service_taxi import SilverServiceTaxi
-
-
 
 MENU = "q)uit, c)hoose taxi, d)rive"
 TAXIS = [
@@ -11,33 +8,34 @@ TAXIS = [
         SilverServiceTaxi("Hummer", 200, 4)
     ]
 
-
 def main():
     """Run the Taxi Simulator program."""
-    total_bill = 0
-    # taxis = [
-    #     Taxi("Prius", 100),
-    #     SilverServiceTaxi("Limo", 100, 2),
-    #     SilverServiceTaxi("Hummer", 200, 4)
-    # ]
+    bill_to_date = 0
     current_taxi = None
 
     print("Let's drive!")
     print(MENU)
-
     choice = input(">>> ").lower()
     while choice != "q":
         if choice == "c":
-            print("Taxis available: ")
+            print("Taxis available:")
             display_taxis(TAXIS)
             current_taxi = check_taxi(TAXIS)
         elif choice == "d":
-            pass
+            if current_taxi is None:
+                print("You need to choose a taxi before you drive")
+            else:
+                bill_to_date = drive_taxi(current_taxi, bill_to_date)
         else:
             print("Invalid option")
 
+        print(f"Bill to date: ${bill_to_date:.2f}")
         print(MENU)
-        menu_choice = input(">>> ").lower()
+        choice = input(">>> ").lower()
+
+    print(f"Total trip cost: ${bill_to_date:.2f}")
+    print("Taxis are now:")
+    display_taxis(TAXIS)
 
 
 
@@ -60,6 +58,22 @@ def check_taxi(taxis):
     except ValueError:
         print("Invalid taxi choice")
         return None
+
+
+
+def drive_taxi(current_taxi, bill_to_date):
+    """Drive the chosen taxi and return updated bill."""
+    try:
+        distance = float(input("Drive how far? "))
+    except ValueError:
+        print("Invalid distance")
+        return bill_to_date
+
+    current_taxi.start_fare()
+    current_taxi.drive(distance)
+    trip_cost = current_taxi.get_fare()
+    print(f"Your {current_taxi.name} trip cost you ${trip_cost:.2f}")
+    return bill_to_date + trip_cost
 
 
 
