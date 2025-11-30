@@ -1,6 +1,7 @@
 import wikipedia
 
 def main():
+    """Prompt the user for Wikipedia page titles and display page details."""
     title = input("Enter page title: ").strip()
     while title != "":
         try:
