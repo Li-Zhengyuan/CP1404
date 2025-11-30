@@ -10,7 +10,10 @@ def main():
             print(page.summary.split("\n")[0])
             print(page.url)
 
-        except
+        except wikipedia.exceptions.DisambiguationError as e:
+            print("We need a more specific title. Try one of the following, or a new search:")
+            print("(BeautifulSoup warning)")
+            print(e.options)
 
         except
 
