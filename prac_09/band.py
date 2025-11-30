@@ -1,0 +1,26 @@
+class Band:
+    """Band class stores a band name and its musicians."""
+    def __init__(self, name):
+        """Initialise a Band with a name and a list of musicians."""
+        self.name = name
+        self.musicians = []
+
+    def __str__(self):
+        """Return string representation of the Band."""
+        musician_strings = ", ".join(str(musician) for musician in self.musicians)
+        return f"{self.name} ({musician_strings})"
+
+    def add(self, musician):
+        """Add a musician to the band."""
+        self.musicians.append(musician)
+
+    def play(self):
+        """Play the band's music (each musician plays their first instrument)."""
+        lines = []
+        for musician in self.musicians:
+            if musician.instruments:
+                instrument = musician.instruments[0]
+                lines.append(f"{musician.name} is playing: {instrument}")
+            else:
+                lines.append(f"{musician.name} needs an instrument!")
+        return "\n".join(lines)
