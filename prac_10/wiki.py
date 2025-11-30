@@ -15,7 +15,8 @@ def main():
             print("(BeautifulSoup warning)")
             print(e.options)
 
-        except
+        except wikipedia.exceptions.PageError:
+            print(f'Page id "{title}" does not match any pages. Try another id!')
 
         title = input("\nEnter page title: ").strip()
 
